@@ -266,24 +266,15 @@ class ViewController:  UIViewController ,MKMapViewDelegate,CLLocationManagerDele
                                      var country = ""
                                      
                                      
-                                     if let name = placemark.name {
-                                         placeName += name
-                                                 }
-                                     if let sublocality = placemark.subLocality {
-                                         neighbourhood += sublocality
-                                                 }
-                                     if let locality = placemark.subLocality {
-                                          city += locality
-                                                 }
-                                     if let area = placemark.administrativeArea {
-                                                   state += area
-                                               }
-                                     if let code = placemark.postalCode {
-                                                   postalCode += code
-                                               }
-                                     if let cntry = placemark.country {
-                                                             country += cntry
-                                                         }
+   
+if let plocality = placemark.subLocality { city += plocality}
+if let parea = placemark.administrativeArea { state += parea}
+ if let pname = placemark.name {placeName += pname}
+  if let psublocality = placemark.subLocality {neighbourhood += psublocality
+                                                                                    }
+if let pcode = placemark.postalCode {postalCode += pcode}
+if let pcountry = placemark.country {country += pcountry
+                                                          }
 
                                      
                                      
