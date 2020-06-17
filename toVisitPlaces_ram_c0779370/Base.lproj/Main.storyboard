@@ -1,24 +1,240 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jl1-uZ-3wb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--My Places-->
+        <scene sceneID="Jqr-Q1-7Kd">
+            <objects>
+                <tableViewController id="Mbv-3i-36I" customClass="favViewControler" customModule="toVisitPlaces_ram_c0779370" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="x1F-Sb-iML">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myplace" rowHeight="129" id="txG-v7-hDi">
+                                <rect key="frame" x="0.0" y="28" width="414" height="129"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="txG-v7-hDi" id="SXk-Rx-7gw">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="129"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aut-w9-qyb">
+                                            <rect key="frame" x="20" y="69" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mbv-3i-36I" id="al9-ei-JPD"/>
+                            <outlet property="delegate" destination="Mbv-3i-36I" id="tmL-hc-FwZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="Ruz-o0-qih">
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="pencil" catalog="system" id="mat-59-14Z">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="y7D-U1-iZb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bo9-a5-nsB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.521739130434788" y="-174.10714285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UUh-h4-rad">
+            <objects>
+                <navigationController id="jl1-uZ-3wb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MSG-Ua-Qta">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Mbv-3i-36I" kind="relationship" relationship="rootViewController" id="rid-WM-adN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D1K-8m-Rhu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-712" y="-184"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="toVisitPlaces_ram_c0779370" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PsJ-IK-uGN">
+                                <rect key="frame" x="0.0" y="78" width="414" height="808"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="4Gg-XW-gKp"/>
+                                    <outletCollection property="gestureRecognizers" destination="JJK-hf-50u" appends="YES" id="kia-ng-NW5"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGA-KL-16C">
+                                <rect key="frame" x="323" y="166" width="45" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" image="plus.magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FAv-J6-peZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NR-NJ-KQK">
+                                <rect key="frame" x="323" y="259" width="45" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" image="minus.magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="zoomOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xSh-wT-bh4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyb-tg-Daq">
+                                <rect key="frame" x="308" y="668" width="75" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="walk"/>
+                                <connections>
+                                    <action selector="walkbtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YOb-ah-8h5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jW-Eb-ZdG">
+                                <rect key="frame" x="0.0" y="739" width="68" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" image="house.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="userlocAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8zP-xY-X8c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zl5-wP-c4H">
+                                <rect key="frame" x="48" y="117" width="29" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" image="info.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="infoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hbq-KY-tVX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BB-Wa-Z69">
+                                <rect key="frame" x="308" y="739" width="75" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" image="location.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="findwayAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p7i-Fe-2Cz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="M8S-Ne-2MZ"/>
+                    <connections>
+                        <outlet property="doubelTap" destination="JJK-hf-50u" id="ky1-cm-32N"/>
+                        <outlet property="findwaybtn" destination="3BB-Wa-Z69" id="DCy-Lg-1c0"/>
+                        <outlet property="infobtn" destination="zl5-wP-c4H" id="qTf-pN-p1E"/>
+                        <outlet property="mapView" destination="PsJ-IK-uGN" id="O9t-Tw-7c6"/>
+                        <outlet property="userlocationbtn" destination="9jW-Eb-ZdG" id="roy-pa-CSP"/>
+                        <outlet property="walk" destination="kyb-tg-Daq" id="YsY-0u-jhJ"/>
+                        <outlet property="zoomin" destination="sGA-KL-16C" id="VGN-Fo-fiY"/>
+                        <outlet property="zoomout" destination="9NR-NJ-KQK" id="Iaa-q6-ZVS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="JJK-hf-50u">
+                    <connections>
+                        <action selector="actionDoubletap:" destination="BYZ-38-t0r" id="VOO-Qm-imc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="766.66666666666674" y="-174.10714285714286"/>
+        </scene>
+        <!--Selectedplaces-->
+        <scene sceneID="BEz-MY-lCS">
+            <objects>
+                <viewController storyboardIdentifier="selectc" id="mnK-Gv-qyI" customClass="selectedplaces" customModule="toVisitPlaces_ram_c0779370" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ro6-hV-Z3c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FO7-Oe-9ze">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1To-Py-28p">
+                                <rect key="frame" x="40" y="673" width="79" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="fjI-Nc-UpQ"/>
+                                </constraints>
+                                <state key="normal" image="house.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="homeBtnAction:" destination="mnK-Gv-qyI" eventType="touchUpInside" id="60R-S4-MtU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7h-PD-Q0X">
+                                <rect key="frame" x="263" y="683" width="101" height="22"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="Odr-a6-QfO"/>
+                                </constraints>
+                                <state key="normal" title="Find Way" image="location" catalog="system"/>
+                                <connections>
+                                    <action selector="findBtnAction:" destination="mnK-Gv-qyI" eventType="touchUpInside" id="9ZJ-HP-Sp5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SzV-hH-0DD" firstAttribute="trailing" secondItem="z7h-PD-Q0X" secondAttribute="trailing" constant="50" id="54i-lJ-KXl"/>
+                            <constraint firstItem="z7h-PD-Q0X" firstAttribute="top" secondItem="SzV-hH-0DD" secondAttribute="top" constant="639" id="BS8-Vu-p6A"/>
+                            <constraint firstItem="FO7-Oe-9ze" firstAttribute="leading" secondItem="SzV-hH-0DD" secondAttribute="leading" id="CjH-3W-hU6"/>
+                            <constraint firstItem="1To-Py-28p" firstAttribute="leading" secondItem="SzV-hH-0DD" secondAttribute="leading" constant="40" id="Emz-iU-S0G"/>
+                            <constraint firstItem="FO7-Oe-9ze" firstAttribute="centerX" secondItem="ro6-hV-Z3c" secondAttribute="centerX" id="Fkw-KF-lzA"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="FO7-Oe-9ze" secondAttribute="bottom" constant="-34" id="LLr-F1-O0Z"/>
+                            <constraint firstItem="FO7-Oe-9ze" firstAttribute="top" secondItem="SzV-hH-0DD" secondAttribute="top" id="QPA-HH-8Cp"/>
+                            <constraint firstItem="1To-Py-28p" firstAttribute="top" secondItem="SzV-hH-0DD" secondAttribute="top" constant="629" id="ddh-Mt-yWe"/>
+                            <constraint firstItem="1To-Py-28p" firstAttribute="centerY" secondItem="z7h-PD-Q0X" secondAttribute="centerY" constant="11" id="tsK-iT-CeI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SzV-hH-0DD"/>
+                    </view>
+                    <connections>
+                        <outlet property="findBtn" destination="z7h-PD-Q0X" id="cri-di-kqC"/>
+                        <outlet property="homeBtn" destination="1To-Py-28p" id="bTv-wZ-25r"/>
+                        <outlet property="mapViewselect" destination="FO7-Oe-9ze" id="Lsb-PY-jIL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rSV-kB-4RJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508.6956521739132" y="-174.10714285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="location" catalog="system" width="64" height="56"/>
+        <image name="location.fill" catalog="system" width="64" height="56"/>
+        <image name="minus.magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="pencil" catalog="system" width="64" height="56"/>
+        <image name="plus.magnifyingglass" catalog="system" width="64" height="56"/>
+    </resources>
 </document>
