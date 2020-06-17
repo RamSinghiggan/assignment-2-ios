@@ -113,30 +113,15 @@ var places : [favplaces]?
            defaults.set(editedPlace.placeLong, forKey: "longitude")
            defaults.set(true, forKey: "bool")
            defaults.set(indexPath.row, forKey: "edit")
-           let mapVC = self.storyboard?.instantiateViewController(withIdentifier: "selectc") as! selectedplaces
-           self.navigationController?.pushViewController(mapVC, animated: true)
+           let selectvc = self.storyboard?.instantiateViewController(withIdentifier: "selectc") as! selectedplaces
+           self.navigationController?.pushViewController(selectvc, animated: true)
        }
 
    
-   
-   
-       /*
-       // Override to support conditional editing of the table view.
-       override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-           // Return false if you do not want the specified item to be editable.
-           return true
-       }
-       */
-       
-   
-   
-   
-   
-      
        // Override to support editing the table view.
-       override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+       override func tableView(_ tableView: UITableView, commit Style: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
            
-           if editingStyle == .delete {
+           if Style == .delete {
                
                self.places?.remove(at: indexPath.row)
                self.tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -144,7 +129,7 @@ var places : [favplaces]?
                self.deleteArray = self.places
                deleteRow()
                
-           } else if editingStyle == .insert {
+           } else if Style == .insert {
            
            }
        }
